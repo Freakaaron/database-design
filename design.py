@@ -164,7 +164,7 @@ ABCD: A->B B->C C->D D->A | Key(s): A, B, C, D | NF: BCNF | Done
 ABC : A->AB A->X A->B B->C AB->C | Key(s): A | NF: 2NF | Done
 ABCD : AB->C C->B AB->A | Key(s): ABD, ABC | NF: 3NF | Done
 ABCD: A->B B->C C->D | Key(s): A | NF: 2NF | Done
-ABCDEF: A->B B->C C->D F->E Key(s): AF | NF: 1NF | Done
+ABCDEF: A->B B->C C->D F->E | Key(s): AF | NF: 1NF | Done
 ABCD: AB->C C->D D->A | Key(s): BA, BC, BD NF: 3NF | Done
 ABCD: B->C B->D | Key(s): AB | NF: 1NF | Done
 ABCD: A->B B->C B->D | Key(s): A | NF: 2NF | Done
