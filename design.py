@@ -148,9 +148,13 @@ if __name__ == '__main__':
         if(count == 0):
             lhs.append(attrs[0])
             rhs.append(attrs[1])
-    seed = input("Enter the seed for computing the closure.\n")
+    size = int(input("Enter number of seeds for which you want to compute closure.\n"))
+    for index in range (0, size):
+        seed = input("Enter the seed for computing the closure.\n")
+        if(seed == "quit"):
+            break
+        print("Closure of the above design: ", design.compute_closure(lhs, rhs, seed), "\n")
     #print(lhs, rhs)
-    print("Closure of the above design: ", design.compute_closure(lhs, rhs, seed), "\n")
     keys = design.compute_keys(lhs, rhs, attributes)
     print("Keys of the above design: ", keys, "\n")
     print("The above relation is in", design.compute_normal_forms(lhs, rhs, keys, attributes))
@@ -169,4 +173,6 @@ ABCD: AB->C C->D D->A | Key(s): BA, BC, BD NF: 3NF | Done
 ABCD: B->C B->D | Key(s): AB | NF: 1NF | Done
 ABCD: A->B B->C B->D | Key(s): A | NF: 2NF | Done
 ABCD: AB->C BC->D CD->A AD->B | Key(s): AB, BC, CD, AD | NF: 3NF | Done
+ABCD: A->C AB->D | Key(s): AB | NF: 1NF | Done
+ABC: A->BC B->CA C->AB | Key(s): A, B, C | NF: BCNF | Done
 '''
