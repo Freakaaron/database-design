@@ -101,11 +101,12 @@ class Design:
                     count2 += 1
                     break
             for index2 in range (0, len(keys)):
-                if(self.is_subset(keys[index2], lhs[index1])):
+                if(self.is_subset(keys[index2], lhs[index1])
+                    or (self.is_subset(lhs[index1], keys[index2]) and self.is_subset(rhs[index1], key_attributes))):
                     count1 += 1
                     break
 
-        if(count2 != 0):
+        if(count2 != 0 and count1 == len(lhs)):
             return "Third Normal Form."
         elif(count1 == len(lhs)):
             return "Boyce-Codd Normal Form."
